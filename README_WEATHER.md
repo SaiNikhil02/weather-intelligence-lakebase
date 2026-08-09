@@ -58,11 +58,13 @@ Sync API
 POST /weather/sync
 Example request:
 
+```json
 {
   "location": "Chicago, IL",
   "latitude": 41.8781,
   "longitude": -87.6298
 }
+```
 
 The application uses deterministic document IDs and PostgreSQL UPSERT logic
 to avoid creating duplicate records when the same forecast is synchronized
@@ -85,11 +87,12 @@ Semantic Search API
 POST /weather/search
 
 Example request:
-
+```json
 {
   "query": "heavy rain and flash flooding",
   "top_k": 5
 }
+```
 
 The query is converted into the same 384-dimensional embedding space.
 
@@ -124,17 +127,17 @@ API Validation
 The API validates invalid requests.
 
 Missing query:
-
+```json
 {
   "error": "query is required"
 }
-
+```
 Invalid top_k:
-
+```json
 {
   "error": "top_k must be an integer"
 }
-
+```
 Both return HTTP status 400.
 
 Project Structure
