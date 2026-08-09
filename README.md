@@ -81,13 +81,13 @@ Example flow:
 ### POST /weather/sync
 
 Example request:
-
 ```json
 {
   "location": "Chicago, IL",
   "latitude": 41.8781,
   "longitude": -87.6298
-} ```
+}
+```
 
 The application uses deterministic document IDs and PostgreSQL UPSERT logic
 to avoid creating duplicate records when the same forecast is synchronized
